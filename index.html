@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আপনার বিশ্বস্ত ব্যাংক</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="login-system">
+        <div class="login" id="login">
+            <h1>Login Banking System</h1>
+            <div class="login-form">
+                <div class="input-field">
+                    <p id="alert-text"></p>
+                    <input id="account" type="text" placeholder="Enter A/C number" autocomplete="off"> <br> <br>
+                    <input id="password" type="password" placeholder="Enter your password">
+                </div>
+                <div class="btn">
+                    <button id="submit-btn">LogIn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banking" id="banking">
+        <div class="container">
+            <div class="banking-system">
+                <div class="total-value">
+                    <h3>মাটির ব্যাংক : $<span id="totalBalance">00</span></h3>
+                </div>
+                <div class="saving-value">
+                    <div class="total-saving">
+                        <h3>বাবার টাকা : $<span id="dTotal">00</span></h3>
+                        <input type="text" id="depositValue" placeholder="Enter Value">
+                        <button id="depoistBtn" class="add-money">Money Add</button>
+                    </div>
+                    <div class="total-widrow">
+                        <h3>আমার খরচ : $<span id="wTotal">00</span></h3>
+                        <input type="text" id="widrowValue" placeholder="Enter amount">
+                        <button id="widrowBtn" class="add-widrow">Widrown</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="entrydate" id="entrylist">
+        <div class="container">
+            <div class="depositentry">
+                <div class="deposit-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Rmark</th>
+                            </tr>
+                        </thead>
+                        <tbody id="deposit-body">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>10/01/2022</td>
+                                <td>12000.00</td>
+                                <td>r-121222</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="widrow-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Rmark</th>
+                            </tr>
+                        </thead>
+                        <tbody id="widrow-body">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>10/01/2022</td>
+                                <td>00</td>
+                                <td>r-121222</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="widrowentry"></div>
+        </div>
+    </div>
+
+    <script src="deposit.js"></script>
+    <script src="widrow1.js"></script>
+    <script src="login1.js"></script>
+</body>
+</html>

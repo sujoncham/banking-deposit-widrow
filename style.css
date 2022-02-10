@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #87ceeb;
+}
+
+
+  .login-system{
+    margin-top: 50px;
+}
+.login{
+    width: 450px;
+    height: 350px ;
+    margin: 0 auto;
+    border: 1px solid #d80;
+    text-align: center;
+    background: #dda
+    ;
+}
+
+.login h1{
+    margin-bottom: 50px;
+}
+
+.input-field input{
+    padding: 10px;
+    width: 70%;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
+#submit-btn{
+    background: #d80;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.banking{
+   box-sizing: border-box; 
+}
+
+.banking-system{
+    width: 900px;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #800080;
+    margin-top: 120px;
+}
+
+.total-value{
+    height: 120px;
+    margin-top: 50px;
+}
+
+.saving-value{
+    display: flex;
+    justify-content: space-around;
+}
+
+.total-saving{
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 120px;
+}
+
+.saving-value h3{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.saving-value input, button{
+    padding: 10px;
+}
+
+.total-widrow{
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 120px;
+}
+
+.depositentry{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deposit-table{
+    width: 48%;
+}
+
+.widrow-table{
+    width: 50%;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 10px 16px;
+  }
+  
