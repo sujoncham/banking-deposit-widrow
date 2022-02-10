@@ -42,7 +42,7 @@ depoistBtn.addEventListener("click", function () {
     count++;
     let depositValue = document.getElementById("depositValue");
     let warnText;
-    if(depositValue.value == ""){
+    if(depositValue.value == "" || depositValue.value <= 0){
         warnText = "Please, Enter valid deposit !";
     } else {
         let newDepositInput = parseFloat(depositValue.value);
@@ -115,7 +115,7 @@ widrowBtn.addEventListener("click", function () {
     
     let widrowValue = document.getElementById("widrowValue");
     let widrowText;
-    if(widrowValue.value == ""){
+    if(widrowValue.value == "" || widrowValue.value <= 0){
         widrowText = "Please, enter valid input !";
     } else{
         let newWidrowValue = parseFloat(widrowValue.value);
