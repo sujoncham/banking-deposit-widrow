@@ -42,7 +42,7 @@ depoistBtn.addEventListener("click", function () {
     count++;
     let depositValue = document.getElementById("depositValue");
     let warnText;
-    if(depositValue == ""){
+    if(depositValue.value == ""){
         warnText = "Please, Enter valid deposit !";
     } else {
         let newDepositInput = parseFloat(depositValue.value);
@@ -53,7 +53,8 @@ depoistBtn.addEventListener("click", function () {
         // total depositValue show 
         let totalNewDeposit = newTotalDeposit + newDepositInput;
         document.getElementById("dTotal").innerText = totalNewDeposit.toFixed(2);
-        document.getElementById('deposit-warn').innerText = warnText;
+       
+        warnText = "successfully added deposit !";
         depositValue.value = "";
         
         //create table row and table data dynamically
@@ -96,6 +97,9 @@ depoistBtn.addEventListener("click", function () {
         let newBalance = newDepositInput + newTotalBalance;
         document.getElementById("totalBalance").innerText = newBalance.toFixed(2);
     }
+
+    const warnShow = document.getElementById('deposit-warn');
+    warnShow.innerText = warnText;
    
 });
 
