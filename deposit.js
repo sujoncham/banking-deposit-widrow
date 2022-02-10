@@ -41,56 +41,62 @@ let depoistBtn = document.getElementById("depoistBtn");
 depoistBtn.addEventListener("click", function () {
     count++;
     let depositValue = document.getElementById("depositValue");
+    let warnText;
+    if(depositValue == ""){
+        warnText = "Please, Enter valid deposit !";
+    } else {
+        let newDepositInput = parseFloat(depositValue.value);
+        
+        let dTotal = document.getElementById("dTotal").innerText;
+        let newTotalDeposit = parseFloat(dTotal);
+        
+        // total depositValue show 
+        let totalNewDeposit = newTotalDeposit + newDepositInput;
+        document.getElementById("dTotal").innerText = totalNewDeposit.toFixed(2);
+        document.getElementById('deposit-warn').innerText = warnText;
+        depositValue.value = "";
+        
+        //create table row and table data dynamically
+        
+        const tableBody = document.querySelector("#deposit-body");
+        //create deposit table row
+        let table_tr = document.createElement("tr");
     
-    let newDepositInput = parseFloat(depositValue.value);
+        //create table data for serial number
+        let table_sl = document.createElement("td");
+        let textSl = document.createTextNode(count);
+        table_sl.appendChild(textSl);
+        table_tr.appendChild(table_sl);
+        
+        //create table data for date and time
+        let table_date = document.createElement("td");
+        let textDate = document.createTextNode(myTime);
+        table_date.appendChild(textDate);
+        table_tr.appendChild(table_date);
+         
+        //create table data for deposit value
+        let table_td = document.createElement("td");
+        let newTdValue = document.createTextNode(newDepositInput);
+        table_td.appendChild(newTdValue);
+        table_tr.appendChild(table_td);
+        
+        // create table data for account name
+        let table_remark = document.createElement("td");
+        let textNode = document.createTextNode(account.value);
+        table_remark.appendChild(textNode);
+        table_tr.appendChild(table_remark);
+        
+        tableBody.appendChild(table_tr);
+        
+        //deposit balance show
+        let totalBalance = document.getElementById("totalBalance").innerText;
+        let newTotalBalance = parseFloat(totalBalance);
     
-    let dTotal = document.getElementById("dTotal").innerText;
-    let newTotalDeposit = parseFloat(dTotal);
-    
-    // total depositValue show 
-    let totalNewDeposit = newTotalDeposit + newDepositInput;
-    document.getElementById("dTotal").innerText = totalNewDeposit.toFixed(2);
-    depositValue.value = "";
-    
-    //create table row and table data dynamically
-    
-    const tableBody = document.querySelector("#deposit-body");
-    //create deposit table row
-    let table_tr = document.createElement("tr");
-
-    //create table data for serial number
-    let table_sl = document.createElement("td");
-    let textSl = document.createTextNode(count);
-    table_sl.appendChild(textSl);
-    table_tr.appendChild(table_sl);
-    
-    //create table data for date and time
-    let table_date = document.createElement("td");
-    let textDate = document.createTextNode(myTime);
-    table_date.appendChild(textDate);
-    table_tr.appendChild(table_date);
-     
-    //create table data for deposit value
-    let table_td = document.createElement("td");
-    let newTdValue = document.createTextNode(newDepositInput);
-    table_td.appendChild(newTdValue);
-    table_tr.appendChild(table_td);
-    
-    // create table data for account name
-    let table_remark = document.createElement("td");
-    let textNode = document.createTextNode(account.value);
-    table_remark.appendChild(textNode);
-    table_tr.appendChild(table_remark);
-    
-    tableBody.appendChild(table_tr);
-    
-    //deposit balance show
-    let totalBalance = document.getElementById("totalBalance").innerText;
-    let newTotalBalance = parseFloat(totalBalance);
-
-     //add deposit balance with main balance
-    let newBalance = newDepositInput + newTotalBalance;
-    document.getElementById("totalBalance").innerText = newBalance.toFixed(2);
+         //add deposit balance with main balance
+        let newBalance = newDepositInput + newTotalBalance;
+        document.getElementById("totalBalance").innerText = newBalance.toFixed(2);
+    }
+   
 });
 
 //deposit end
