@@ -97,7 +97,7 @@ depoistBtn.addEventListener("click", function () {
         let newBalance = newDepositInput + newTotalBalance;
         document.getElementById("totalBalance").innerText = newBalance.toFixed(2);
     }
-
+    //deposite massage show
     const warnShow = document.getElementById('deposit-warn');
     warnShow.innerText = warnText;
    
@@ -114,7 +114,11 @@ widrowBtn.addEventListener("click", function () {
     count1++;
     
     let widrowValue = document.getElementById("widrowValue");
-    let newWidrowValue = parseFloat(widrowValue.value);
+    let widrowText;
+    if(widrowValue.value == ""){
+        widrowText = "Please, enter valid input !";
+    } else{
+        let newWidrowValue = parseFloat(widrowValue.value);
     let wTotal = document.getElementById("wTotal").innerText;
     let newWidrowTotal = parseFloat(wTotal);
     
@@ -125,6 +129,8 @@ widrowBtn.addEventListener("click", function () {
     //   widrow total balance show
     let totalBalance = document.getElementById("totalBalance").innerText;
     let newTotalBalance = parseFloat(totalBalance);
+    //widrow massage
+    widrowText = "You widrown succesfully, Thanks !";
     
     widrowValue.value = "";
     
@@ -165,4 +171,10 @@ widrowBtn.addEventListener("click", function () {
     
     document.getElementById("wTotal").innerText = totalNewWidrow.toFixed(2);
     widrowBody.appendChild(table_tr1);
+    }
+
+    const warnerron = document.getElementById('widrow-warn');
+    warnerron.innerText = widrowText;
+
+    
 });
