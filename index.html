@@ -31,18 +31,18 @@
         <div class="container">
             <div class="banking-system">
                 <div class="total-value">
-                    <h1>মাটির ব্যাংক : $<span id="totalBalance">1200</span></h1>
+                    <h1 id="main-heading">মাটির ব্যাংক : $<span id="totalBalance">1200</span></h1>
                 </div>
                 <div class="saving-value">
                     <div class="total-saving">
-                        <h3>বাবার টাকা : $<span id="dTotal">00</span></h3>
+                        <h3 class="second-heading">বাবার টাকা : $<span id="dTotal">00</span></h3>
                         <p id="deposit-warn"></p>
                         <input type="number" id="depositValue" placeholder="Enter Value">
                         
                         <button id="depoistBtn" class="add-money">Money Add</button>
                     </div>
                     <div class="total-widrow">
-                        <h3>আমার খরচ : $<span id="wTotal">00</span></h3>
+                        <h3 class="second-heading">আমার খরচ : $<span id="wTotal">00</span></h3>
                         <p id="widrow-warn"></p>
                         <input type="number" id="widrowValue" placeholder="Enter amount">
                         <button id="widrowBtn" class="add-widrow">Widrown</button>
@@ -101,7 +101,15 @@
     </div>
 
     <script src="deposit.js"></script>
-    <script src="widrow1.js"></script>
-    <script src="login1.js"></script>
+ 
+
+    <script>
+        const mainHeading = document.getElementById('main-heading');
+        mainHeading.style.color = "white";
+        const secondHeading = document.querySelectorAll('.second-heading');
+        for(let i=0;i<secondHeading.length;i++){
+            secondHeading[i].style.color = "white";
+        }
+    </script>
 </body>
 </html>
